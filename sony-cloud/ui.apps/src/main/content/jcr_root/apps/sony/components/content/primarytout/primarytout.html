@@ -1,0 +1,97 @@
+<sly data-sly-use.model="com.sony.core.models.PrimaryTout" />
+
+<div class="PrimaryTout__Container">
+
+    <div class="js-video-content video_content">
+        <div class="PrimaryTout__CloseButton">
+            <span class="js-close-btn close_btn Icon -close" tabindex="0"></span>
+        </div>
+
+        <div class="js-video-link js-youtube videoLink cookie-enabled"></div>
+
+        <div controls="" class="js-video-link js-local-video videoLink hide"
+             src="" width="1200" height="450" autoplay="true">
+        </div>
+    </div>
+
+    <div class="parentContainer">
+
+        <!-- IMAGE CONTAINER -->
+        <div class="PrimaryTout__ImageContainer" style="margin-bottom: 0px;">
+            <figure>
+                <picture>
+
+                    <!-- Mobile -->
+                    <img class="PrimaryTout__Image -onlySmallScreen"
+                         src="${model.primaryToutNameMobileImage @ context='uri'}"
+                         srcset="${model.primaryToutNameMobileImage @ context='uri'}"
+                         alt="Primary Tout Image"/>
+
+                    <!-- Desktop -->
+                    <img class="PrimaryTout__Image -ignoreSmallScreen"
+                         src="${model.primaryToutDesktopImage @ context='uri'}"
+                         srcset="${model.primaryToutDesktopImage @ context='uri'}"
+                         alt="Primary Tout Image"/>
+
+                </picture>
+            </figure>
+        </div>
+
+        <!-- TEXT SECTION -->
+        <div class="PrimaryTout__TextBoxContainer">
+            <div class="PrimaryTout__TextBoxContainerInner">
+                <div class="PrimaryTout__TextBox -col5span">
+                    <div class="PrimaryTout__TextBoxInner -TransparentBoxWhiteText">
+
+                        <div class="PrimaryTout__Text">
+                            <div class="PrimaryTout__SubHeadline"></div>
+                            <div class="PrimaryTout__BodyCopy"></div>
+                        </div>
+
+                        <!-- BUTTON -->
+                        <div class="PrimaryTout__ButtonContainer">
+
+                            <a class="PrimaryTout__Button js-datalayer-action-event"
+                               tabindex="0"
+                               role="link"
+                               data-is-open-in-new-window="false"
+                               data-interaction-componenttype="primary_tout"
+                               data-interaction-componentid="primary_tout-Primary Tout-en_GL-responsivegrid_structure_top_primarytout_copy"
+                               data-interactiontype="navigation-click"
+                               href="${model.buttonPath @ context='uri'}"
+                               data-actionable-item-value="${model.buttonText}"
+                               target="_parent">
+
+                                <span class="PrimaryTout__ButtonText">
+                                    ${model.buttonText}
+                                </span>
+
+                                <span class="PrimaryTout__ButtonBlankIcon"></span>
+                            </a>
+
+                        </div>
+
+                        <div class="PrimaryTout__SubImage -Default"></div>
+
+                        <div class="PrimaryTout__AddonContainer">
+                            <div class="PrimaryTout__AddonImage"></div>
+
+                            <div class="PrimaryTout__AddonDescription">
+                                <div class="PrimaryTout__AddonBody"></div>
+
+                                <div class="PrimaryTout__AddonButtonContainer"
+                                     data-classname="PrimaryTout"
+                                     data-is-open-in-new-window="false"
+                                     data-video-summary-open-in-new-tab="false">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

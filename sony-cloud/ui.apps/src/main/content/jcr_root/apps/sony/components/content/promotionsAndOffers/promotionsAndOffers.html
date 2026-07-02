@@ -1,0 +1,95 @@
+ <sly data-sly-use.model="com.sony.core.models.PromotionsModel"/>
+ <style>
+/* Remove the box (icon font) */
+.PromotionsAndOffers__Headline::after {
+  content: "" !important; /* override old icon */
+  background: url("/content/dam/sony/arrow.svg") no-repeat center;
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+
+  position: absolute;
+  right: -25px;   /* adjust this */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Required for positioning */
+.PromotionsAndOffers__Headline {
+  position: relative;
+}*::before,
+*::after {
+  content: none !important;
+}
+</style>
+<section class="component PromotionsAndOffers -SpacingTopSmall-10 -SpacingTopLarge-10 -SpacingBottomSmall-10 -SpacingBottomLarge-10">
+    <div class="component-content"
+         data-componenttype="${model.componentType}"
+         data-componentid="${model.componentId}">
+
+        <div class="PromotionsAndOffers__Inner">
+
+            <h2 class="PromotionsAndOffers__Heading">
+                ${model.heading}
+                  
+            </h2>
+
+            <div class="PromotionsAndOffers__Content">
+ 
+                <sly data-sly-list.item="${model.promotions}">
+                    <div class="component PromotionsAndOffers__Item -Large">
+
+                        <div class="component-content">
+                            <div class="PromotionsAndOffers__wrapper">
+
+                                <div class="PromotionsAndOffers__Text">
+
+                                    <a href="${item.link}"
+                                       target="${item.target}"
+                                       class="PromotionsAndOffers__Link">
+                                  
+                                        <h3 class="PromotionsAndOffers__Headline">
+                                            ${item.title}
+                                             
+                                        </h3>
+
+                                    </a>
+
+                                    <p class="PromotionsAndOffers__BodyCopy">
+                                    ${item.description}
+                                     
+                                    </p>
+ 
+                                </div>
+
+                                <div class="PromotionsAndOffers__ImageContainer">
+                                    <figure>
+                                        <picture>
+
+                                            <source media="(min-width: 992px)"
+                                                    srcset="${item.image}"/>
+
+                                            <img class="PromotionsAndOffers__Image"
+                                                 src="${item.image}"
+                                                 alt="${item.alt}"/>
+
+                                        </picture>
+                                    </figure>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+ 
+                    </div>
+                </sly>
+
+                <div class="PromotionsAndOffers__Notes">
+                    ${model.notes}
+                     
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

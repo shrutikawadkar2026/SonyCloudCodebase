@@ -1,0 +1,47 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+
+<sly data-sly-call="${clientlib.js @ categories='cq.jquery'}"/>
+
+<div class="home-container">
+
+    <h1>Home Page</h1>
+
+ 
+    <h2 id="welcomeUser">Loading...</h2>
+
+</div>
+
+
+<script>
+    (function () {
+
+        console.log("INLINE JS RUNNING");
+
+        function setUser() {
+            var user = sessionStorage.getItem("loggedInUser");
+            console.log("User:", user);
+
+            var el = document.getElementById("welcomeUser");
+
+            if (!el) {
+                console.log("Element not found");
+                return;
+            }
+
+            if (user) {
+                el.innerText = "Welcome, " + user + " 👋";
+            } else {
+                el.innerText = "Welcome, Guest";
+            }
+        }
+
+       
+        window.onload = function () {
+            setUser();
+        };
+
+    })();
+</script>
+
+

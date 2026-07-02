@@ -1,0 +1,123 @@
+<sly data-sly-use.clientlib="granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.all @ categories=['cq.jquery','sony.loginForm']}"/>
+
+<style>
+.auth-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: Arial, sans-serif;
+}
+
+.auth-card {
+    width: 380px;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.auth-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-input {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    
+}
+
+.auth-input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
+}
+
+.auth-btn {
+    padding: 12px;
+    background: #6c63ff;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+.auth-btn:hover {
+    background: #574fd6;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.auth-link-btn {
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    color: #6c63ff;
+    font-weight: 600;
+    cursor: pointer;
+  
+}
+
+.auth-link-btn:hover {
+    color: #3f37c9;
+    text-decoration: underline;
+}
+</style>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+        <div id="formMessage" style="margin-bottom: 15px; font-size: 14px;"></div>
+
+        <h2 class="auth-title">Create Account</h2>
+
+        <form id="registrationForm" class="auth-form">
+
+            <input class="auth-input" type="text" name="name" placeholder="Full Name" required />
+
+            <input class="auth-input" type="text" name="username" placeholder="Username" required />
+
+            <input class="auth-input" type="email" name="email" placeholder="Email" required />
+
+            <input class="auth-input" type="password" name="password" placeholder="Password" required />
+
+            <button class="auth-btn" type="submit">Register</button>
+
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account?</p>
+            <button class="auth-link-btn" onclick="goToLogin()">Login</button>
+        </div>
+
+    </div>
+
+</div>
+

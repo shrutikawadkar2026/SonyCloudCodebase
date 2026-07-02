@@ -1,0 +1,127 @@
+<sly data-sly-use.model="com.sony.core.models.SonyFooter" />
+
+<div class="gwx-sony-footer">
+	<footer class="component GlobalFooter js-product-compare-plain-view">
+      <div class="component-content"
+           data-componenttype="global_footer"
+           data-componentid="global_footer-Footer-en_IN-root_globalfooter">
+
+         <div class="GlobalFooter__Second">
+            <div class="GlobalFooter__Inner">
+               <div class="GlobalFooter__SecondContents">
+
+                  <!-- Country / Region -->
+                  <div class="GlobalFooter__CountryRegion">
+                     <div class="GlobalFooter__CountryRegionInner">
+                        <a href="${model.countryLink}"
+                           class="GlobalFooter__CountryRegionLink js-datalayer-action-event">
+                           <span class="GlobalFooter__CountryRegionText">
+                              ${model.countryText}
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+
+                  <!-- Navigation Links -->
+                  <div class="GlobalFooter__SecondNav">
+                     <ul class="GlobalFooter__SecondLinkList">
+
+                        <sly data-sly-list.item="${model.links}">
+                           <li class="GlobalFooterSecondLinkListItem">
+                              <a href="${item.linkPath}"
+                                 tabindex="0"
+                                 role="link"
+                                 target="_blank"
+                                 class="GlobalFooterSecondLinkListItem__Link js-datalayer-action-event">
+                                 ${item.linkText}
+                              </a>
+                           </li>
+                        </sly>
+
+                     </ul>
+
+                     <!-- Social Media -->
+                     <div class="GlobalFooterSns">
+
+                        <sly data-sly-list.sns="${model.socialLinks}">
+                           <div class="GlobalFooterSnsItem">
+                              <div class="GlobalFooterSnsItem__Container">
+
+                                 <a href="${sns.iconurl}"
+                                    class="GlobalFooterSnsItem__Button js-triggerTooltip js-datalayer-action-event"
+                                    target="_blank">
+
+                                    <span class="Icon">
+                                       <img src="${sns.icon}"
+                                            alt="social media icon"
+                                            class="GlobalFooter__SharePopupLogo"/>
+                                    </span>
+
+                                 </a>
+
+                              </div>
+                           </div>
+                        </sly>
+
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+
+         <!-- META SECTION -->
+         <div class="GlobalFooter__Meta">
+            <hr class="Border"/>
+
+            <div class="GlobalFooter__MetaWrapper">
+               <div class="GlobalFooter__MetaInner">
+
+                  <!-- Meta Links -->
+                  <div class="GlobalFooter__About">
+                     <ul class="GlobalFooter__MetaLinkList">
+
+                        <sly data-sly-list.meta="${model.metaLinks}">
+                           <li class="GlobalFooterMetaLinkListItem">
+                              <a href="${meta.metalinkPath}"
+                                 tabindex="0"
+                                 role="link"
+                                 target="_blank"
+                                 class="GlobalFooterMetaLinkListItem__Link js-datalayer-action-event">
+                                 ${meta.metalinkText}
+                              </a>
+                           </li>
+                        </sly>
+
+                     </ul>
+                  </div>
+
+                  <!-- Brand -->
+                  <p class="GlobalFooter__Brand">
+                     <a href="${model.brandlink}"
+                        target="_blank"
+                        tabindex="0"
+                        role="link"
+                        class="GlobalFooter__BrandLink js-datalayer-action-event">
+
+                        <img src="${model.brandimage}"
+                             class="GlobalFooter__BrandLinkImageBase"/>
+
+                     </a>
+                  </p>
+
+                  <!-- Copyright -->
+                  <p class="GlobalFooter__Copyright">
+                     ${model.copyright}
+                  </p>
+
+               </div>
+
+               <div class="GlobalFooter__MetaInner__Payments"></div>
+
+            </div>
+         </div>
+
+      </div>
+   </footer>
+</div>

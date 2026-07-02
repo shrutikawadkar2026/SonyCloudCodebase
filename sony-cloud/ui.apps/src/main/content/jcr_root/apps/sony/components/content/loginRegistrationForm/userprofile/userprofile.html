@@ -1,0 +1,88 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='myapp.userdata'}"/>
+
+<div id="userCard" style="max-width:500px;margin:40px auto;padding:30px;
+            border:1px solid #ccc;border-radius:10px;
+            font-family:Arial;box-shadow:0 0 10px rgba(0,0,0,0.1);">
+
+    <div style="text-align:center;color:#999;">Loading user data...</div>
+
+</div>
+
+<script>
+    
+    var urlParams  = new URLSearchParams(window.location.search);
+    var email      = urlParams.get("email");
+    var userCard   = document.getElementById("userCard");
+
+    if (!email) {
+        userCard.innerHTML = "<p style='color:red;text-align:center;'>No user found. Please login again.</p>";
+    } else {
+
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/bin/getuserdata?email=" + encodeURIComponent(email), true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+
+                if (data.status === "success") {
+                    var firstLetter = data.firstName ? data.firstName.charAt(0).toUpperCase() : "U";
+
+                    userCard.innerHTML =
+                        "<div style='display:flex;align-items:center;margin-bottom:20px;'>" +
+                            "<div style='width:60px;height:60px;border-radius:50%;background:#007bff;color:#fff;" +
+                                        "font-size:24px;font-weight:bold;display:flex;align-items:center;" +
+                                        "justify-content:center;margin-right:15px;'>" +
+                                firstLetter +
+                            "</div>" +
+                            "<div>" +
+                                "<h2 style='margin:0;'>Welcome, " + data.firstName + "!</h2>" +
+                                "<p style='margin:0;color:#666;'>@" + data.username + "</p>" +
+                            "</div>" +
+                        "</div>" +
+                        "<hr style='margin-bottom:20px;'>" +
+                        "<table style='width:100%;border-collapse:collapse;'>" +
+                            "<tr style='border-bottom:1px solid #eee;'>" +
+                                "<td style='padding:10px;font-weight:bold;color:#555;width:40%;'>Full Name</td>" +
+                                "<td style='padding:10px;'>" + data.firstName + " " + data.lastName + "</td>" +
+                            "</tr>" +
+                            "<tr style='border-bottom:1px solid #eee;'>" +
+                                "<td style='padding:10px;font-weight:bold;color:#555;'>Email</td>" +
+                                "<td style='padding:10px;'>" + data.email + "</td>" +
+                            "</tr>" +
+                            "<tr style='border-bottom:1px solid #eee;'>" +
+                                "<td style='padding:10px;font-weight:bold;color:#555;'>Username</td>" +
+                                "<td style='padding:10px;'>@" + data.username + "</td>" +
+                            "</tr>" +
+                            "<tr style='border-bottom:1px solid #eee;'>" +
+                                "<td style='padding:10px;font-weight:bold;color:#555;'>Mobile</td>" +
+                                "<td style='padding:10px;'>" + data.mobile + "</td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td style='padding:10px;font-weight:bold;color:#555;'>Age</td>" +
+                                "<td style='padding:10px;'>" + data.age + "</td>" +
+                            "</tr>" +
+                        "</table>" +
+                        "<hr style='margin-top:20px;'>" +
+                        "<button type='button' onclick='logout()'" +
+                                "style='width:100%;padding:12px;background:#dc3545;color:#fff;" +
+                                       "border:none;border-radius:5px;cursor:pointer;font-size:16px;margin-top:10px;'>" +
+                            "Logout" +
+                        "</button>";
+
+                } else {
+                    userCard.innerHTML = "<p style='color:red;text-align:center;'>User not found. Please login again.</p>";
+                }
+            }
+        };
+
+        xhr.send();
+    }
+
+   
+    function logout() {
+        window.location.href = "/content/sony/us/en/registration-page/login-page.html?wcmmode=disabled";
+    }
+</script>

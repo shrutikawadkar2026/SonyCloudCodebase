@@ -1,0 +1,29 @@
+.footnote__text {
+    font-size: 12px;
+    color: #6d6d6d;
+    line-height: 1.6;
+}
+
+/* Ordered list (1,2,3) */
+.footnote__text ol {
+    margin: 0 0 10px 20px;
+}
+
+/* Unordered list → remove default bullets */
+.footnote__text ul {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* Add custom "*" */
+.footnote__text ul li {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.footnote__text ul li::before {
+    content: "*";
+    position: absolute;
+    left: -15px;
+}

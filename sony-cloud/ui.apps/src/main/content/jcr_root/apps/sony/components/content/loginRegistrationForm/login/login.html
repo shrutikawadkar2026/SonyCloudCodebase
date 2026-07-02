@@ -1,0 +1,24 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='myapp.login'}"/>
+
+<div style="max-width:400px;margin:80px auto;padding:30px;
+            border:1px solid #ccc;border-radius:10px;
+            font-family:Arial;box-shadow:0 0 10px rgba(0,0,0,0.1);">
+
+    <h2 style="text-align:center;">Login</h2>
+
+    <input type="email"    id="loginEmail"    placeholder="Email *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="password" id="loginPassword" placeholder="Password *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+
+    <button type="button" id="loginBtn"
+            style="width:100%;padding:12px;background:#28a745;color:#fff;
+                   border:none;border-radius:5px;cursor:pointer;font-size:16px;">
+        Login
+    </button>
+
+    <div id="loginMsg" style="margin-top:15px;text-align:center;font-weight:bold;"></div>
+
+</div>
+

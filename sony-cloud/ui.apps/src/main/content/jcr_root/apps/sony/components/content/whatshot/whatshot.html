@@ -1,0 +1,58 @@
+<sly data-sly-use.model="com.sony.core.models.WhatsHotModel" />
+
+<div class="ecWhatshots ecWhatshot aem-GridColumn aem-GridColumn--default--12">
+
+    <div class="ECWhatsHot_Container">
+        <div class="ECProductCarousel__Container">
+
+            <h2 class="ECProductCarousel__Headline">
+                ${model.title}
+            </h2>
+
+            <!-- FORCE HORIZONTAL -->
+            <div class="ECProductCarousel__Wrapper"
+                 style="display:flex; overflow-x:auto; gap:16px;">
+
+                <sly data-sly-list.item="${model.products}">
+
+                    <!-- EACH CARD -->
+                    <div class="ECProductCarousel__Slide"
+                         style="min-width:250px; flex:0 0 auto;">
+
+                        <div class="ProductTileOne">
+
+                            <!-- IMAGE -->
+                            <div class="ProductTileOne__ImageContainer">
+                                <a href="${item.link @ context='uri'}"
+                                   class="ProductTileOne__PDPLink">
+
+                                    <img src="${item.image @ context='uri'}"
+                                         alt="${item.title}"
+                                         class="ProductTileOne__Image"/>
+                                </a>
+                            </div>
+
+                            <!-- TITLE -->
+                            <span class="ProductTileOne__ProductName">
+                                ${item.title}
+                            </span>
+
+                            <!-- PRICE -->
+                            <div class="ProductTileOne__ParentPriceContainer">
+                                <p class="ProductTileOne__PriceContainer">
+                                    ${item.price}
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </sly>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

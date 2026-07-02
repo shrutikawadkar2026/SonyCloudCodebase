@@ -1,0 +1,89 @@
+<!--<sly data-sly-use.model="com.sony.core.models.FootnotesModel"/>-->
+
+<div class="component Footnotes ${model.expanded ? '-isExpanded' : ''}" data-footnotes>
+
+    <div class="component-content">
+
+        <!-- ✅ TOGGLE BUTTON (ONLY ONE) -->
+        <button type="button"
+                class="Footnotes__Label custom-footnote-label"
+                data-toggle
+                aria-expanded="${model.expanded}">
+
+            ${model.label}
+
+            <!-- ✅ YOUR CUSTOM ICON -->
+            <span class="custom-footnote-icon">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+            </span>
+
+        </button>
+
+        <!-- BODY -->
+        <div class="Footnotes__BodyContainer" id="${model.targetId}">
+
+            <!-- Numbered -->
+            <div class="Footnotes__Body">
+                <ul class="Footnotes__List js-numbered-footnotes">
+                    <sly data-sly-list.item="${model.numberedFootnotes}">
+                        <li class="Footnotes__ListItem">
+                            <span class="Footnotes__ItemBullet">${item.index}</span>
+                            <span class="Footnotes__ItemText">${item.text}</span>
+                        </li>
+                    </sly>
+                </ul>
+            </div>
+
+            <!-- Star -->
+            <div class="Footnotes__Body">
+                <ul class="Footnotes__List">
+                    <sly data-sly-list.item="${model.starFootnotes}">
+                        <li class="Footnotes__ListItem">
+                            <span class="Footnotes__ItemBullet">*</span>
+                            <span class="Footnotes__ItemText">${item.text}</span>
+                        </li>
+                    </sly>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- POPUP -->
+        <div class="FootnotePopup" data-popup>
+            <div class="FootnotePopup__Dialog">
+
+                <div class="FootnotePopup__Content">
+                    <span class="FootnotePopup__ContentId"></span>
+                    <span class="FootnotePopup__ContentText"></span>
+                </div>
+
+                <!-- CLOSE BUTTON -->
+                <!-- <button type="button" class="FootnotePopup__CloseButton">
+                    <svg viewBox="0 0 24 24" width="14" height="14">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="2"/>
+                    </svg>
+                </button> -->
+<button type="button"
+        class="Footnotes__Label custom-footnote-label"
+        data-toggle
+        aria-expanded="${model.expanded}">
+
+    ${model.label}
+
+    <span class="custom-footnote-icon">
+        <svg viewBox="0 0 24 24" width="14" height="14">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+    </span>
+
+</button>
+                <div class="FootnotePopup__Arrow"></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

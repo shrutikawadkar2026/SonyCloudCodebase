@@ -1,0 +1,26 @@
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+
+<body class="page">
+
+    <header class="site-header">
+        <div class="site-header__logo">
+            <a href="/">Sony Website</a>
+        </div>
+        <nav class="site-header__nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <div data-sly-resource="${'root' @ resourceType='wcm/foundation/components/parsys'}"/>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 My Website. All rights reserved.</p>
+    </footer>
+
+</body>

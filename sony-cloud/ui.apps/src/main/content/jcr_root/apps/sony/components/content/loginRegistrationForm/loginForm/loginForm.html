@@ -1,0 +1,70 @@
+<sly data-sly-use.clientlib="granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.all @ categories=['cq.jquery','sony.loginForm']}"/>
+
+<style>
+.login-form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+#loginForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    width: 320px;
+    text-align: center;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+#loginForm input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108,99,255,0.4);
+}
+
+#loginForm button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginForm button:hover {
+    background: #574fd6;
+}
+</style>
+
+<div class="login-form">
+    <form id="loginForm">
+
+        <input type="text" name="username" placeholder="Username" required /><br><br>
+
+        <input type="password" name="password" placeholder="Password" required /><br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+</div>
+
+
+

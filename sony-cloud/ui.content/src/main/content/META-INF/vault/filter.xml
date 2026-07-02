@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/sony" mode="merge"/>
+    <filter root="/content/sony" mode="merge"/>
+    <filter root="/content/dam/sony" mode="merge">
+        <exclude pattern="/content/dam/sony(/.*)?"/>
+        <include pattern="/content/dam/sony/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/sony/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/sony" mode="merge"/>
+</workspaceFilter>

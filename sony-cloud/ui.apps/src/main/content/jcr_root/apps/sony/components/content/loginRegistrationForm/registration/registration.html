@@ -1,0 +1,36 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='myapp.login'}"/>
+
+<div style="max-width:500px;margin:40px auto;padding:30px;
+            border:1px solid #ccc;border-radius:10px;
+            font-family:Arial;box-shadow:0 0 10px rgba(0,0,0,0.1);">
+
+    <h2 style="text-align:center;">Class 12 Admission Form</h2>
+
+    <input type="text"     id="firstName"  placeholder="First Name *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="text"     id="lastName"   placeholder="Last Name"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="date"     id="dob"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="number"   id="age"        placeholder="Age (auto calculated)" readonly
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;background:#f5f5f5;">
+    <input type="email"    id="regEmail"   placeholder="Email *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="text"     id="username"   placeholder="Username (auto generated)" readonly
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;background:#f0f8ff;">
+    <input type="tel"      id="mobile"     placeholder="Mobile Number *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+    <input type="password" id="password"   placeholder="Password *"
+           style="width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;">
+
+    <button type="button" id="regBtn"
+            style="width:100%;padding:12px;background:#007bff;color:#fff;
+                   border:none;border-radius:5px;cursor:pointer;font-size:16px;">
+        Submit Application
+    </button>
+
+    <div id="regMsg" style="margin-top:15px;text-align:center;font-weight:bold;"></div>
+
+</div>
+

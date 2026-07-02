@@ -1,0 +1,179 @@
+ <sly data-sly-use.model="com.sony.core.models.FooterModel"/>
+
+<style>
+.gwx-sony-footer {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 80px;
+}
+
+/* MAIN GRID */
+.GlobalFooter__MainContents {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* COLUMN */
+.GlobalFooter__MainItem {
+    min-width: 180px;
+}
+
+/* HEADER */
+.GlobalFooter__MainItemButtonInner {
+    font-size: 14px;
+    font-weight: 600;
+    color: #aaa;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* SEARCH WRAPPER */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #444;
+    width: 240px;
+    height: 36px;
+    background: #000;
+}
+
+/* INPUT */
+.GlobalFooter__SearchFormInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+
+/* BUTTON */
+.search-btn {
+    background-color: #2d5ea6;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* LOCATION LINK */
+.location-link {
+    display: block;
+    margin-top: 12px;
+    color: #4da3ff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* LIST */
+.GlobalFooter__ListMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* LIST ITEM */
+.GlobalFooterListMenuItem {
+    margin-bottom: 10px;
+}
+
+/* LINKS */
+.GlobalFooterListMenuItem__Link {
+    color: #ccc;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.GlobalFooterListMenuItem__Link:hover {
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .GlobalFooter__MainContents {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+</style>
+
+<div class="gwx-sony-footer">
+<footer class="component GlobalFooter">
+
+<div class="GlobalFooter__Main">
+<div class="GlobalFooter__Inner">
+<div class="GlobalFooter__MainContents">
+
+<!-- ================= FIND STORE ================= -->
+<div class="GlobalFooter__MainItem">
+
+    <div class="GlobalFooter__MainItemHeader">
+        <h2>
+            <span class="GlobalFooter__MainItemButtonInner">
+                ${model.findStoreTitle}
+            </span>
+        </h2>
+    </div>
+
+    <div class="GlobalFooter__MainItemBody">
+
+        <div class="search-wrapper">
+            <input type="text"
+                   class="GlobalFooter__SearchFormInput"
+                   placeholder="${model.placeholder}" />
+
+            <button class="search-btn">
+                ${model.buttonText}
+            </button>
+        </div>
+
+        <a href="${model.locationLink}" class="location-link">
+            See Our Locations
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ================= OTHER SECTIONS ================= -->
+<sly data-sly-list.section="${model.sections}">
+
+<div class="GlobalFooter__MainItem">
+
+    <div class="GlobalFooter__MainItemHeader">
+        <h2>
+            <span class="GlobalFooter__MainItemButtonInner">
+                ${section.sectionTitle}
+            </span>
+        </h2>
+    </div>
+
+    <div class="GlobalFooter__MainItemBody">
+
+        <ul class="GlobalFooter__ListMenu">
+
+            <sly data-sly-list.link="${section.links}">
+                <li class="GlobalFooterListMenuItem">
+                    <a href="${link.url}" class="GlobalFooterListMenuItem__Link">
+                        ${link.text}
+                    </a>
+                </li>
+            </sly>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</sly>
+
+</div>
+</div>
+</div>
+
+</footer>
+</div>

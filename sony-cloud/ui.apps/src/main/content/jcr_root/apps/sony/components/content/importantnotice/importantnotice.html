@@ -1,0 +1,72 @@
+<sly data-sly-use.model="com.sony.core.models.ImportantNoticeModels" />
+<div class="importantNotices aem-GridColumn aem-GridColumn--default--12">
+    <div>
+        <section class="component ImportantNotices -SpacingTopSmall-10 -SpacingTopLarge-10 -SpacingBottomSmall-10 -SpacingBottomLarge-10">
+            
+            <div class="component-content"
+                 data-componenttype="important_notices"
+                 data-componentid="important_notices">
+
+                <div class="ImportantNotices__Inner">
+
+                  
+                    <div class="ImportantNotices__Header__Container">
+                        <!-- <span class="ImportantNotices_Icon">
+                            <img src="${model.icon @ context='uri'}" alt="icon"/>
+                        </span>
+
+                        <h2 class="ImportantNotices__Header">
+                            ${model.title @ context='text'}
+                        </h2> -->
+                    </div>
+
+              
+                    <ul class="ImportantNotices__List"
+                        data-sly-list.item="${model.notices}">
+
+                        <li class="component ImportantNotices__Item">
+                       <div class="component-content">
+
+                                <a href="${item.link @ context='uri'}"
+                                   tabindex="0"
+                                   role="link"
+                                   class="ImportantNotices__ListLink js-datalayer-action-event"
+                                   target="${item.newTab ? '_blank' : '_self'}">
+
+                                    <span class="ImportantNotices__ListTitle ${item.newTab ? '-newTabIcon' : ''}"
+                                          tabindex="0">
+                                        ${item.text @ context='text'}
+                                    </span>
+
+                                </a>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    
+                    <div class="ImportantNotices__Footer">
+
+                        <a href="${model.ctaLink @ context='uri'}"
+                           
+                           tabindex="0"
+                           role="link"
+                           class="ImportantNotices__FooterLink js-datalayer-action-event"
+                           target="_self">
+
+                            <!-- <span class="ImportantNotices__FooterLinkLabel">
+                                ${model.ctaText @ context='text'}
+                            </span> -->
+
+                        </a>
+
+                    </div>
+
+                    <div class="ImportantNotices__Notes"></div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

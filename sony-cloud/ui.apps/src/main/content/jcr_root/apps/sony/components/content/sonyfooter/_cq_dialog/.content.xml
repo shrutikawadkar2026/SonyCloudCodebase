@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Sony Footer&#xa;"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <country
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Country Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <countryText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Country Text"
+                                name="./countryText"/>
+                            <countryLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Country Path"
+                                name="./countryLink"/>
+                        </items>
+                    </country>
+                    <footerTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Footer Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <FooterLink
+                                granite:class="mf-validate"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="[granite/ui/components/coral/foundation/form/multifield]"
+                                composite="{Boolean}true"
+                                FieldLabel="Footer Links">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    fieldLabel="Notices Data"
+                                    name="./links">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <linkText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                            fieldLabel="Link Text"
+                                            name="./linkText"
+                                            required="{Boolean}true"/>
+                                        <linkPath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Link"
+                                            name="./linkPath"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    max="{Long}8"
+                                    min="{Long}1"/>
+                            </FooterLink>
+                        </items>
+                    </footerTab>
+                    <socialTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Social Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <socialLink
+                                granite:class="mf-validate"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="[granite/ui/components/coral/foundation/form/multifield]"
+                                composite="{Boolean}true"
+                                FieldLabel="Social Links">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    fieldLabel="Social Link Data"
+                                    name="./socialLinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <icon
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Icon"
+                                            name="./icon"
+                                            required="{Boolean}true"/>
+                                        <iconurl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Icon Url"
+                                            name="./iconurl"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    max="{Long}8"
+                                    min="{Long}1"/>
+                            </socialLink>
+                        </items>
+                    </socialTab>
+                    <metaLinkTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Meta Link Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <metaLink
+                                granite:class="mf-validate"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="[granite/ui/components/coral/foundation/form/multifield]"
+                                composite="{Boolean}true"
+                                fieldLabel="Meta Link Tab">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    fieldLabel="Social Link Data"
+                                    name="./metaLinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <metalinkText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                            fieldLabel="Meta Link Text"
+                                            name="./metalinkText"
+                                            required="{Boolean}true"/>
+                                        <metalinkPath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Meta Link Path"
+                                            name="./metalinkPath"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    max="{Long}3"
+                                    min="{Long}1"/>
+                            </metaLink>
+                        </items>
+                    </metaLinkTab>
+                    <brandTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Brand Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <brandlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Brand Link"
+                                name="./brandlink"/>
+                            <brandimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Brand Image"
+                                name="./brandimage"/>
+                            <copyright
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Copyright"
+                                name="./copyright"/>
+                        </items>
+                    </brandTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

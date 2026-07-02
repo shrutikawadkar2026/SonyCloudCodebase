@@ -1,0 +1,149 @@
+<!-- <sly data-sly-use.model="com.sony.core.models.PromotionTilesModel"/>
+
+<section class="component PromotionTiles">
+
+    <div class="component-content">
+
+        <div class="PromotionTiles__Body -White">
+            <div class="PromotionTiles__Inner">
+
+                <h2 class="PromotionTiles__Title">${model.title}</h2>
+
+                <div class="SwiperContainer">
+                    <div class="PromotionTiles__ItemContainer">
+
+                        <div class="PromotionTilesItem__Swiper">
+
+                            <div class="PromotionTilesItem__Wrapper">
+
+                                <sly data-sly-list.item="${model.tiles}">
+                                    <div class="component PromotionTilesItem__Slide -col4span">
+                                        <div class="component-content">
+
+                                            <a class="PromotionTilesItem__Container"
+                                               href="${item.link @ context='uri'}"
+                                               target="_blank">
+
+                                                <figure class="PromotionTilesItem__ImageContainer">
+                                                    <img class="PromotionTilesItem__Image"
+                                                         src="${item.image}"
+                                                         alt="${item.tileTitle}" />
+                                                </figure>
+
+                                                <div class="PromotionTilesItem__Text -LightBoxDarkText">
+                                                    <h3 class="PromotionTilesItem__Eyebrow">
+                                                        ${item.eyebrow}
+                                                    </h3>
+
+                                                    <p class="PromotionTilesItem__Title">
+                                                        ${item.tileTitle}
+                                                    </p>
+                                                </div>
+
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </sly>
+
+                            </div>
+
+                            
+                            <button type="button" class="PromotionTilesItem__PrevButton" aria-label="Previous">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15 6l-6 6 6 6"/>
+                                </svg>
+                            </button>
+
+                            
+                            <button type="button" class="PromotionTilesItem__NextButton" aria-label="Next">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section> -->
+
+
+<sly data-sly-use.model="com.sony.core.models.PromotionTilesModel"/>
+
+<section class="component PromotionTiles">
+
+    <div class="component-content">
+
+        <div class="PromotionTiles__Body -White">
+            <div class="PromotionTiles__Inner">
+
+                <h2 class="PromotionTiles__Title">${model.title}</h2>
+
+                <div class="SwiperContainer">
+                    <div class="PromotionTiles__ItemContainer">
+
+                        <div class="PromotionTilesItem__Swiper">
+
+                            <div class="PromotionTilesItem__Wrapper">
+
+                                <sly data-sly-list.item="${model.tiles}">
+                                    <div class="component PromotionTilesItem__Slide -col4span">
+                                        <div class="component-content">
+
+                                            <a class="PromotionTilesItem__Container"
+                                               href="${item.link @ context='uri'}">
+
+                                                <figure class="PromotionTilesItem__ImageContainer">
+                                                    <img class="PromotionTilesItem__Image"
+                                                         src="${item.image}"
+                                                         alt="${item.tileTitle}" />
+                                                </figure>
+
+                                                <div class="PromotionTilesItem__Text -LightBoxDarkText">
+                                                    <h3 class="PromotionTilesItem__Eyebrow">
+                                                        ${item.eyebrow}
+                                                    </h3>
+
+                                                    <p class="PromotionTilesItem__Title">
+                                                        ${item.tileTitle}
+                                                    </p>
+                                                </div>
+
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </sly>
+
+                            </div>
+
+                            <!-- PREV -->
+                            <button type="button" class="PromotionTilesItem__PrevButton">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15 6l-6 6 6 6"/>
+                                </svg>
+                            </button>
+
+                            <!-- NEXT -->
+                            <button type="button" class="PromotionTilesItem__NextButton">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

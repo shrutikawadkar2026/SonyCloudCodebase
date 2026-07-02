@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/sony/clientlibs"/>
+    <filter root="/apps/sony/components"/>
+    <filter root="/apps/sony/i18n"/>
+</workspaceFilter>
